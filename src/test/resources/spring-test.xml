@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean id="phone" class="com.lixinxin.maven.pojo.Phone">
+		<property name="id" value="888"></property>
+		<property name="brandname" value="华为"></property>
+	</bean>
+	<!-- <bean id="student" name="studentName" class="com.lixinxin.maven.pojo.Student" p:id="68" p:name="小黑" p:phone-ref="phone">
+	set注入
+	<property name="id" value="666666"></property>
+		<property name="name" value="spring"></property>
+		<property name="phone" ref="phone"></property>
+	构造方法注入
+		 <constructor-arg name="id" value="888" index="0"></constructor-arg>
+		<constructor-arg name="name" value="小王" index="1"></constructor-arg>
+		<constructor-arg name="phone" ref="phone" index="2"></constructor-arg>
+		
+	</bean> -->
+	<!-- 注解的使用 -->
+	<!-- base-package 基础包：com下的所有注解类，包括com下所有子包里面的注解类，都能扫描到 -->
+	<!-- 但是为了工程的优化，我们应该尽量指向详细的包名 -->
+	<context:component-scan base-package="com.lixinxin.maven.pojo"></context:component-scan>
+	<!-- <bean name="studentFactory" class="com.lixinxin.maven.factory.StudentFactory" factory-method="createStudent"></bean> -->
+</beans>
